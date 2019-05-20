@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-lg-1">
         </div>
-        <div class="col-lg-5">
+        <div class="col-lg-5" style="opacity: 0.9">
             <form (ngSubmit)="onSearchSubmit()" class="my-5 my-lg-0">
                 <div class="row">
                     <div class="col-sm-10">
@@ -73,7 +73,7 @@
             </form>
             <hr>
 
-            <div droppable (onDrop)="onAddYoutubeSubmit($event)" class="scrollbar scrollbar-danger">
+            <div droppable (onDrop)="onAddYoutubeSubmit($event)" class="scrollbar scrollbar-danger"  style="opacity: 0.9"> 
                 <div *ngIf="showData" id="loading">
                     <div id="loading-center">
                         <div id="loading-center-absolute">
