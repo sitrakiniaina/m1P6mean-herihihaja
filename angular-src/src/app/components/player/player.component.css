@@ -1,5 +1,5 @@
 .cont{
-    margin-top: 40px;
+    margin: 40px;
 }
 .customwrapper{
   margin-right: auto;
@@ -146,8 +146,8 @@
   font-weight: 600;
 }
 #project-wrapper #project-container #content .h2{
-  font-size: 4.3em;
-    margin: 12px 0 0 0;
+  font-size: 2.3em;
+    
     font-weight: 600;
 }
 

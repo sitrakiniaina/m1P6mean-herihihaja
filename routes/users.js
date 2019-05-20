@@ -14,13 +14,13 @@ router.post('/register', (req,res,next)=>{
     });
     User.getUserByEmail(newUser.email,function(err,user){
         if(user){
-            return res.json({success:false, msg:"L'email utilisé est déjà assigné à un autre compte"});
+            return res.json({success:false, msg:"The email used is already assigned to another account"});
         }
         User.addUser(newUser, function(err, user){
             if(err){
                 res.json({success: false, msg:"Erreur lors de l'enregistrement"}); 
             }else{
-                res.json({success: true, msg:'Utilisateur enregistré'}); 
+                res.json({success: true, msg:'Successfull'}); 
             }
         });
     });
@@ -35,7 +35,7 @@ router.post('/authenticate', (req,res,next)=>{
     User.getUserByEmail(email, function(err, user){
         if(err) throw err; 
         if(!user){
-            return res.json({success:false, msg:"Pseudo ou mot de passe incorrecte"});   
+            return res.json({success:false, msg:"Incorrect username or password"});   
         }
 
         User.comparePassword(password, user.password, function(err, isMatch){
@@ -55,7 +55,7 @@ router.post('/authenticate', (req,res,next)=>{
                      } 
                  });
             }else{
-                return res.json({success: false, msg: 'Pseudo ou mot de passe incorrecte' });
+                return res.json({success: false, msg: 'Incorrect username or password' });
             }
         });
     });

@@ -26,7 +26,7 @@ module.exports.getPlayListById = function(id, callback){
 
 module.exports.addPlayList = function(newPlayList,callback){
     if(newPlayList.name==undefined){
-        newPlayList.name = "Sans Nom";
+        newPlayList.name = "Unknown";
     }
     newPlayList.nombre = 0; 
     newPlayList.date = Date.now();
