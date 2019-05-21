@@ -35,25 +35,25 @@ export class RegisterComponent implements OnInit {
       confirmer: this.confirmer
     }
     if(!this.validateService.validateRegister(user)){
-      this.flashMessagesService.show('Veuillez remplir tout les champs', {cssClass: 'alert-primary', timeout: 3000});
+      this.flashMessagesService.show('Please complete all fields', {cssClass: 'alert-primary', timeout: 3000});
       return false;
     }
     if(!this.validateService.validateEmail(user.email)){
-      this.flashMessagesService.show('Veuillez utiliser un mail valide', {cssClass: 'alert-primary', timeout: 3000});
+      this.flashMessagesService.show('Use a valide email', {cssClass: 'alert-primary', timeout: 3000});
       return false;
     }
     if(!this.validateService.validatePassword(user.password,user.confirmer)){
-      this.flashMessagesService.show('Les 2 mots de passe ne sont pas identiques', {cssClass: 'alert-primary', timeout: 3000});
+      this.flashMessagesService.show('The 2 passwords are not identical', {cssClass: 'alert-primary', timeout: 3000});
       return false;
     }
     this.authService.registerUser(user).subscribe(data => {
       if(data.success){
         this.router.navigate(['/login']);
-        this.flashMessagesService.show('Vous êtes maintenant inscrit, veuillez vous connectez', {cssClass: 'alert-success', timeout: 3000});
+        this.flashMessagesService.show('Congratulation! Please reconnect !', {cssClass: 'alert-success', timeout: 3000});
        
       }else{
         this.router.navigate(['/register']);
-        this.flashMessagesService.show('Une erreur est parvenue '+data.msg, {cssClass: 'alert-primary', timeout: 3000});  
+        this.flashMessagesService.show('Error '+data.msg, {cssClass: 'alert-primary', timeout: 3000});  
       }
     });
 

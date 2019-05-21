@@ -28,17 +28,17 @@ export class LoginComponent implements OnInit {
       password:  this.password
     }
     if(!this.validateService.validateLogin(user)){
-      this.flashMessagesService.show('Veuillez remplir tout les champs', {cssClass: 'alert-primary', timeout: 3000});
+      this.flashMessagesService.show('Please complete all fields', {cssClass: 'alert-primary', timeout: 3000});
       return false;
     }
     if(!this.validateService.validateEmail(user.email)){
-      this.flashMessagesService.show('Veuillez utiliser un mail valide', {cssClass: 'alert-primary', timeout: 3000});
+      this.flashMessagesService.show('Use a valide email', {cssClass: 'alert-primary', timeout: 3000});
       return false;
     }
     this.authService.authenticateUser(user).subscribe(data => {
         if(data.success){
             this.authService.storeUserData(data.token, data.user);
-            this.flashMessagesService.show("Vous êtes connecté", {
+            this.flashMessagesService.show("You are log in", {
               cssClass: 'alert-success', 
               timout: 5000});
               this.router.navigate(['/home']);

@@ -126,10 +126,12 @@ export class PlaylistComponent implements OnInit {
         this.onSave=false;
         this.loadDataBackground();
       }else{
-        this.flashMessagesService.show("impossible de supprimer la video", {cssClass: 'alert-primary', timeout: 3000});
-        this.videos.push(objectToDelete);
-        this.onSave=false;
+        //this.flashMessagesService.show("impossible de supprimer la video", {cssClass: 'alert-primary', timeout: 3000});
+        //this.videos.push(objectToDelete);
+        //this.onSave=false;
       }
+      this.onSave=false;
+        this.loadDataBackground();
     });
 
   }

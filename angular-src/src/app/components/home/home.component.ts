@@ -92,8 +92,10 @@ export class HomeComponent implements OnInit {
       if(data.success){
         this.loadData();
       }else{
-        this.flashMessagesService.show(data.msg, {cssClass: 'alert-primary', timeout: 3000});
+        //this.flashMessagesService.show(data.msg, {cssClass: 'alert-primary', timeout: 3000});
       }
+      
+        this.loadData();
     });
   }
 
